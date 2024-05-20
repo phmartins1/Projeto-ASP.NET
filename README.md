@@ -1,5 +1,5 @@
-# Projeto-Faculdade
-Meu último projeto da faculdade foi um sistema que permite aos funcionários da empresa acessarem todas as suas folhas de pagamento.
+# Projeto-ASP.NET
+Meu último projeto da faculdade foi um sistema WEB que permite aos funcionários da empresa acessarem todas as suas folhas de pagamento.
 
 Desenvolvimento do Projeto:
   No processo de desenvolvimento da aplicação web, utilizamos o ambiente .AspNet MVC em conjunto com o Visual Studio como nossa IDE principal. O Visual Studio desempenhou um papel fundamental ao oferecer recursos para edição, depuração e gerenciamento do projeto, entre outros. Para criar a interface com o usuário, empregamos HTML e CSS, enquanto a lógica subjacente do aplicativo é alimentada pela linguagem C#.
