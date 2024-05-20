@@ -1,0 +1,31 @@
+﻿@model HoleriteListViewModel
+
+<div class="gera">
+    <div class="container">
+        <center>
+            <h2>Baixar Holerite</h2>
+            <br />
+            <label for="holeriteSelect"><b>Selecione o mês e ano:</b></label>
+            <select id="holeriteSelect" style="width:200px">
+                @foreach (var holerite in Model.Holerites)
+                {
+                    <option value="@holerite.ImagemUrl">@holerite.DataHolerite</option>
+                }
+            </select>
+            <br /><br/> <br />
+            <a id="downloadLink" href="#" class="btngerar" download="holerite.pdf">Baixar Holerite</a>
+            <br />
+        </center>
+    </div>
+</div>
+
+<script>
+    // Adicione um ouvinte de evento para a seleção de alteração
+    document.getElementById("holeriteSelect").addEventListener("change", function () {
+        var selectedHolerite = this.value; // Obtém o valor selecionado
+        var downloadLink = document.getElementById("downloadLink");
+
+        // Construa o URL de download com base no valor selecionado
+        downloadLink.href = "/Holerites/DownloadPDF?pdfFileName=" + selectedHolerite;
+    });
+</script>

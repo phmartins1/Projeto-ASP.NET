@@ -1,0 +1,41 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Gerar Holerite";
+}
+
+<div class="gera">
+    <div class="">
+        
+        <form style="" method="post">
+            <div class="container">
+                <center>
+                    <h2>Gerar Holerite</h2><br />
+                
+                <label for="uname"><b>Selecione o mês e ano:</b></label>
+                <input maxlength="7" id="mes" placeholder="MM/AAAA" type="month" name="month" required pattern="[0-9]{2}/[0-9]{4}" />
+                    <span class="validity"></span>
+                </center>
+                
+                <br />
+                <button onclick="document.getElementById('id01').style.display='block'" class="btngerar" type="submit">Baixar Holerite</button>
+                <br />
+            </div>
+        </form>
+        <!--Modall-->
+        <div class="motamanho">
+            <div id="id01" class="w3-modal">
+                <div class="w3-modal-content">
+                    <div class="w3-container">
+                        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                        <center><br />
+                        <h2>Holerite Gerado com sucesso!</h2>
+                        <br />
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

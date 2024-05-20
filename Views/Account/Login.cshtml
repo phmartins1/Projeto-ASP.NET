@@ -1,0 +1,87 @@
+﻿@model LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Payroll</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Payroll.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js" />
+
+</head>
+<body>
+
+    <center>
+
+        <div class="main">
+            <div class="login">
+                <img src="~/images/Logo.png" width="50%" height="50%" />
+
+                <form asp-controller="Account" asp-action="Login" method="post">
+                    @Html.AntiForgeryToken()
+                    <div asp-validation-kk,msummary="All">
+                        <div class="container">
+
+                            <label asp-for="Email"><b>E-mail</b></label>
+                            <input asp-for="Email" type="text" placeholder="Digite seu e-mail" required />
+
+                            <label asp-for="Senha"><b>Senha</b></label>
+                            <input asp-for="Senha" id="senha" type="password" placeholder="Digite sua senha" required />
+                            <div style="position: absolute; left:7%;"><input type="checkbox" onclick="myFunction()"> Exibir Senha</div>
+                            <br /><br />
+                            <input type="submit" class="botao" value="Acessar" /><br />
+                            <a style="position: absolute; left:35%;" class="esquece" onclick="document.getElementById('id01').style.display='block'">Esqueceu sua senha?</a><br />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </center>
+
+    <div class="motamanho">
+        <div id="id01" class="w3-modal">
+            <div class="w3-modal-content">
+                <div class="w3-container">
+                    <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                    <center>
+                        <br />
+                        <center>
+                            <div class="relembrar">
+                                <!-- Restante do seu HTML para a página de recuperação de senha -->
+                                <form asp-controller="Account" asp-action="EnviarEmail" method="post">
+                                    <div asp-validation-summary="All">
+                                        <div class="container">
+                                            <label asp-for="Email"><b>E-mail</b></label>
+                                            <input asp-for="Email" type="text" placeholder="Digite seu e-mail" required>
+                                            <input type="submit" class="botao" value="Enviar" /><br />
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </center>
+                        <br />
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("senha");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
+</body>
+</html>
